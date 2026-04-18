@@ -6,3 +6,7 @@
 !/scripts
 !/.coze
 !/.gitignore
+
+# 3. 追踪workspace目录（哆啦dora工作空间）
+!/workspace
+!/workspace/**
