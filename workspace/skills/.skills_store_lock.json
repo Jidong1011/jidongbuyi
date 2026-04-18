@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "self-improving": {
+      "name": "Self-Improving + Proactive Agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=self-improving",
+      "source": "skillhub",
+      "version": "1.2.16"
+    },
+    "memory-system-v2": {
+      "name": "Memory System V2",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=memory-system-v2",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "memory-pipeline": {
+      "name": "Memory Pipeline",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=memory-pipeline",
+      "source": "skillhub",
+      "version": "0.4.0"
+    }
+  }
+}
