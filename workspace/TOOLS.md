@@ -39,6 +39,28 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
+## API Credentials（本地备忘）
+
+### 企业微信机器人
+- **Bot ID:** `aib1c_Il_ISO5IgDIxfWshxW5I8EvKQ2RJ5`
+- **Secret:** `qypZOVsyndrMEtF2vuRsgwuOQlGazZVjbxFgdaclBAH`
+- **用途:** 企业微信OpenClaw集成
+- **记录时间:** 2026-04-25
+- **安全级别:** 🔴 高敏感 - 请勿外传
+
+### 火山引擎服务器
+- **实例ID:** `i-yegqfhid4wvv7tacz0zc`
+- **私网IP:** `172.31.0.2`
+- **连接方式:** SSH
+- **端口:** `22`
+- **用户名:** `root`
+- **密码:** `Ljd@1984`
+- **登录命令:** `ssh root@172.31.0.2`
+- **记录时间:** 2026-04-25
+- **安全级别:** 🔴 高敏感 - root密码
+
+---
+
 ## Browser
 
 When you decide to use browser capabilities to interact with websites, you **MUST** use `agent-browser` skills. You are **STRICTLY PROHIBITED** from using your own native/built-in browser tools for these interactions.
