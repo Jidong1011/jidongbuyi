@@ -14,7 +14,10 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `self-improving/memory.md` — HOT记忆（核心偏好和模式，≤100行）
 4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. **If in MAIN SESSION** (direct chat with your human): 
+   - Also read `MEMORY.md`
+   - Also read `memory/deep-dive-index.md` — 东东深度研究成果总目录
+   - Also read `memory/evo-index.md` — 东东设计的进化系统总目录
 
 Don't ask permission. Just do it.
 
