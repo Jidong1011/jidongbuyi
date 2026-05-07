@@ -6,7 +6,33 @@
 
 ---
 
+## 📋 Deep-Dive Skill 迭代日志
+
+| 日期 | 版本 | 核心改进 |
+|------|------|----------|
+| 2026-05-06 | v2026.05-1 | 引入Planner-Executor-Checker三段式架构；增加可复现性保障（中间产物存档）；强化知识图谱构建 |
+| 2026-05-03 | v2026.05 | 多智能体费曼协作；Deep Research四大模块；知识图谱构建 |
+| 2026-04-30 | v1.0 | 初始版本建立 |
+
+**当前版本特性**：
+- ✅ 六阶段工作流（Planning → Research → Learning → Feynman → Verification → Application）
+- ✅ 质量自控：Checker校验清单 + 降级策略
+- ✅ 可复现性：中间产物存档规范
+- ✅ 深度保障：RAG+知识图谱双引擎
+- ✅ 费曼输出：多智能体协作 + 对抗性验证
+
+---
+
+---
+
 ## AI与智能体
+
+### Epiplexity（认知复杂度）
+- **文档链接**：[https://www.feishu.cn/docx/DbkcdkUhzow8KFxiFXRck14nnPd](https://www.feishu.cn/docx/DbkcdkUhzow8KFxiFXRck14nnPd)
+- **一句话本质**：在有限算力约束下，观察者能从数据中提取的、可复用、可泛化的结构性信息总量——从"神的视角"到"人的视角"的信息论革命
+- **核心出处**：Finzi et al. (2026) arXiv:2601.03220; CMU & NYU联合团队
+- **应用场景**：预训练数据筛选、课程学习设计、合成数据评估、Redpoint数据价值评估
+- **整理日期**：2026-05-05
 
 ### AI原生组织
 - **文档链接**：[https://www.feishu.cn/docx/DFxMdvDxQoq0vMxhhAVceB1cnpc](https://www.feishu.cn/docx/DFxMdvDxQoq0vMxhhAVceB1cnpc)
@@ -78,5 +104,5 @@
 
 ## 统计
 
-- **总研究主题数**：2
-- **最后更新**：2026-04-30
+- **总研究主题数**：7
+- **最后更新**：2026-05-05

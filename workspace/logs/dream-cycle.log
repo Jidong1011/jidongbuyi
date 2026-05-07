@@ -178,3 +178,61 @@ Total imported: 37 entries
 [4/4] Health check...
 Total vectors in brain: 449
 === Dream Cycle Completed: Mon May  4 03:00:11 AM CST 2026 ===
+=== Dream Cycle Started: Tue May  5 03:00:01 AM CST 2026 ===
+[1/4] Importing today's memories...
+Initializing GBrain from existing memory files...
+Imported 3 entries from 2026-04-19.md
+Imported 5 entries from 2026-05-04.md
+Imported 17 entries from 2026-04-15.md
+Imported 1 entries from 2026-04-16.md
+Imported 12 entries from 2026-04-14.md
+Imported 4 entries from 2026-04-30.md
+Total imported: 42 entries
+[2/4] Processing daily raw materials...
+[3/4] Checking for new entities...
+<stdin>:21: SyntaxWarning: invalid escape sequence '\s'
+Created entity: "状态
+Created entity: ：规则固定
+Created entity: 反馈滞后
+Created entity: "理念相通
+Created entity: 在乎什么
+[4/4] Health check...
+Total vectors in brain: 491
+=== Dream Cycle Completed: Tue May  5 03:00:12 AM CST 2026 ===
+=== Dream Cycle Started: Wed May  6 03:00:01 AM CST 2026 ===
+[1/4] Importing today's memories...
+Initializing GBrain from existing memory files...
+Imported 3 entries from 2026-04-19.md
+Imported 5 entries from 2026-05-04.md
+Imported 17 entries from 2026-04-15.md
+Imported 1 entries from 2026-04-16.md
+Imported 12 entries from 2026-04-14.md
+Imported 4 entries from 2026-04-30.md
+Total imported: 42 entries
+[2/4] Processing daily raw materials...
+[3/4] Checking for new entities...
+<stdin>:21: SyntaxWarning: invalid escape sequence '\s'
+Created entity: 探索
+Created entity: 晋江
+Created entity: ：规则多变
+Created entity: 反馈
+Created entity: 收藏暴涨
+[4/4] Health check...
+Total vectors in brain: 533
+=== Dream Cycle Completed: Wed May  6 03:00:13 AM CST 2026 ===
+=== Dream Cycle Started: Thu May  7 03:00:01 AM CST 2026 ===
+[1/4] Importing today's memories...
+Initializing GBrain from existing memory files...
+Imported 3 entries from 2026-04-19.md
+Imported 5 entries from 2026-05-04.md
+Imported 17 entries from 2026-04-15.md
+Imported 1 entries from 2026-04-16.md
+Imported 12 entries from 2026-04-14.md
+Imported 4 entries from 2026-04-30.md
+Total imported: 42 entries
+[2/4] Processing daily raw materials...
+[3/4] Checking for new entities...
+<stdin>:21: SyntaxWarning: invalid escape sequence '\s'
+[4/4] Health check...
+Total vectors in brain: 575
+=== Dream Cycle Completed: Thu May  7 03:00:14 AM CST 2026 ===
