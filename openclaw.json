@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-05-08T13:01:47.778Z"
+    "lastTouchedAt": "2026-05-08T13:04:01.567Z"
   },
   "wizard": {
     "lastRunAt": "2026-02-05T16:16:05.545Z",
@@ -223,7 +223,7 @@
       },
       "xiaomi": {
         "baseUrl": "https://token-plan-cn.xiaomimimo.com/v1",
-        "apiKey": "tp-cxlspfz6uvaw9nx7l49ofjcusgk0h424mvl2jkrj4u38w3qf",
+        "apiKey": "tp-cq3dq1a11s765vbb5yprio5i9hssfpdnzi6ryynepf72jvag",
         "api": "openai-completions",
         "models": [
           {
