@@ -1,0 +1,7 @@
+name,wecom_app_id
+dongdong,
+# 请在下方添加项目组成员，格式：姓名,企业微信应用ID
+# 示例：
+# zhangsan,ww1234567890abcdef
+# lisi,ww2345678901abcdef
+# wangwu,ww3456789012abcdef
