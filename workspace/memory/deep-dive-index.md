@@ -112,11 +112,32 @@
 - **整理日期**：2026-05-08
 - **十大方向**：智能体平台、多模态AI、AI编程、AI搜索、AI内容创作、AI硬件、科学智能（AI4S）、具身智能、端侧小模型、AI安全治理
 
+### 米哈游LPM 1.0：角色表演生成的革命
+- **文档链接**：[https://www.feishu.cn/docx/VgsKdn2Mhoz9VyxqCkWcuv2NnCe](https://www.feishu.cn/docx/VgsKdn2Mhoz9VyxqCkWcuv2NnCe)
+- **一句话本质**：LPM 1.0是米哈游用170亿参数打造的「虚拟演员」——它不生成风景，只生成角色的喜怒哀乐；不追求画面精美，只追求表演真实；不满足于生成一段视频，而是要让角色像真人一样「会说、会听、会反应」，持续陪你聊天几个小时都不会「走样」
+- **核心出处**：arXiv:2604.07823论文；曾爱玲通讯作者；Anuttacon公司；170亿参数DiT架构
+- **应用场景**：游戏NPC深度对话、虚拟陪伴与虚拟主播、游戏过场动画实时生成、教育培训角色扮演、纪东不已IP虚拟角色化
+- **整理日期**：2026-05-12
+- **关键洞察**：「特化路线」可能比「通用路线」更适合游戏；全双工实时交互是下一代游戏的关键差异点；无限时长生成打破了游戏叙事的时间限制
+
+### AI编程Agent方法论：多Agent协作与Missions系统
+- **文档链接**：[https://www.feishu.cn/docx/ZkYtdmbweoX94WxjArecO7SQnIe](https://www.feishu.cn/docx/ZkYtdmbweoX94WxjArecO7SQnIe)
+- **一句话本质**：AI工程化的核心瓶颈已从"模型智能"转向"人类注意力带宽"，解决方案是构建可审计、可恢复的多Agent协作系统，而非追求单点智能突破
+- **核心出处**：Galorey Bokan（阿里工程师）方法论；Factory AI Missions系统（40天连续运行）；Anthropic多Agent协作指南（2026-04）；Google Research Agent扩展科学论文
+- **应用场景**：企业级代码库迁移、AI工程化流程设计、多Agent系统架构、团队AI编程规范制定
+- **整理日期**：2026-05-13
+- **关键洞察**：验证契约提前拦截37%潜在问题；创作者-验证者上下文隔离是核心；串行优先原则（仅允许只读操作并行）
+
 ---
 
 ## 组织与管理
 
-*(待添加)*
+### AI时代工程团队管理：Anthropic Claude Code团队实践
+- **文档链接**：[https://www.feishu.cn/docx/E7LOdYmk7oe7XHxydoCcrlYlnMe](https://www.feishu.cn/docx/E7LOdYmk7oe7XHxydoCcrlYlnMe)
+- **一句话本质**：当AI让写代码变得几乎免费，工程管理的核心矛盾从"如何让工程师写得更快"转向"如何让人+AI的协作系统产出更高质量的决策"——代码不再是稀缺资源，人类判断力才是。
+- **核心出处**：Fiona Fung (Anthropic) Code with Claude 2026演讲；Anthropic Harness Engineering论文；Claude Code创始人Cyril Kirsanov访谈
+- **应用场景**：OPC/一人公司工程管理、小团队组织设计、AI辅助决策、产品管理JIT Planning
+- **整理日期**：2026-05-13
 
 ---
 
@@ -182,5 +203,5 @@
 
 ## 统计
 
-- **总研究主题数**：16（含1个重构版）
-- **最后更新**：2026-05-08
+- **总研究主题数**：18（含1个重构版）
+- **最后更新**：2026-05-13
