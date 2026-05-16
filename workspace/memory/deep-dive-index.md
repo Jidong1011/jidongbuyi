@@ -27,6 +27,14 @@
 
 ## AI与智能体
 
+### Anthropic Managed Agents 架构
+- **文档链接**：[https://www.feishu.cn/docx/F7umdhQZcoD2DaxoSWUcnktqnAb](https://www.feishu.cn/docx/F7umdhQZcoD2DaxoSWUcnktqnAb)
+- **一句话本质**：Managed Agents是Anthropic把"从原型到生产"的Agent基础设施打包成云服务——你只定义Agent的脑子（提示词+工具），沙箱、状态、凭证、错误恢复全部托管
+- **核心出处**：Anthropic Engineering博客《Scaling Managed Agents: Decoupling the brain from the hands》（2026-04-08）；官方API文档；三层解耦架构（Brain/Hands/Session）
+- **应用场景**：Agent架构设计参考、技术选型决策（Managed Agents vs OpenClaw vs OpenAI Assistants）、成本估算、多Agent协作模式
+- **整理日期**：2026-05-15
+- **关键洞察**：Session≠Context Window（事件日志比无限上下文更适合长程任务）；Harness假设随模型升级过时，解耦是必然；与OpenClaw是互补而非替代关系
+
 ### 延展心智与系统极限
 - **文档链接**：[https://www.feishu.cn/docx/BabTdRtEcoqt5ixxhF5codWZnwy](https://www.feishu.cn/docx/BabTdRtEcoqt5ixxhF5codWZnwy)
 - **一句话本质**：所谓"人类极限"其实是"当前技术系统下的极限"——当工具被真正内化成为认知的一部分，人+工具的组合将超越任何单一元素，这正是AI时代个人竞争力的核心来源
@@ -128,6 +136,54 @@
 - **整理日期**：2026-05-13
 - **关键洞察**：验证契约提前拦截37%潜在问题；创作者-验证者上下文隔离是核心；串行优先原则（仅允许只读操作并行）
 
+### Agent效率革命：多Agent并行工作流与Agentfile
+- **文档链接**：[https://www.feishu.cn/docx/FMiqd48tMozb5PxdHOwcrqJtn0e](https://www.feishu.cn/docx/FMiqd48tMozb5PxdHOwcrqJtn0e)
+- **一句话本质**：当AI Agent从"单兵作战"进化到"多人军团"，核心挑战从"怎么让Agent干活"变成"怎么管理同时跑的十几个Agent"——文件管理、任务收口、结果预览成为新的效率瓶颈
+- **核心出处**：Boris Cherny（Claude Code创始人）并行工作流（5个Claude同时跑）；Thariq Shihipar《The Unreasonable Effectiveness of HTML》；Agentfile开源项目（基于Wave改造）
+- **应用场景**：多项目并行开发、Agent产出Review与收口、HTML交付物生成、CLAUDE.md团队记忆配置
+- **整理日期**：2026-05-13
+- **关键洞察**：收口比生产更重要；开发者从"写代码的人"变成"看结果做决策的人"；HTML是AI输出的新格式标准
+
+### Hermes Kanban 多Agent协作
+- **文档链接**：[https://www.feishu.cn/docx/Abt8dSw7ooYM2Pxs5MqcSgvwnhg](https://www.feishu.cn/docx/Abt8dSw7ooYM2Pxs5MqcSgvwnhg)
+- **一句话本质**：Hermes Kanban是"给AI打工仔们排班的共享任务看板"——通过持久化SQLite任务队列、原子事务认领、六列状态流转和Dispatcher调度器，让多个独立Agent像真实团队一样并行工作、自动流转、失败重试
+- **核心出处**：Hermes Agent官方文档v0.12.0+；Nous Research GitHub仓库；Kanban Tutorial官方教程；社区对比分析文章
+- **应用场景**：多Agent自动化流程设计、任务状态管理、失败重试机制、与OpenClaw互补使用
+- **整理日期**：2026-05-14
+- **关键洞察**：六列状态流转对应真实开发流程；原子事务解决Agent竞争问题；与OpenClaw是互补而非替代关系
+
+### AI PPT生成的Skill革命：从提示词到技能工程
+- **文档链接**：[https://www.feishu.cn/docx/BGh6d1pj5oHo3ixrQWzcWNpVnSg](https://www.feishu.cn/docx/BGh6d1pj5oHo3ixrQWzcWNpVnSg)
+- **一句话本质**：AI做PPT的瓶颈已经从"能不能做"变成"能不能保持设计一致性"——guizang-ppt-skill用SKILL.md把10年设计经验编码成AI可执行的7条设计纪律，证明了"Skill是AI时代的设计系统"
+- **核心出处**：歸藏guizang-ppt-skill（GitHub 6000+ Star）；GPT-Image 2.0配图集成；瑞士国际主义设计传统（Vignelli/Müller-Brockmann）；Agent Skills范式（从Prompt到Skill）
+- **应用场景**：PPT自动生成、多平台封面适配、设计一致性保障、Skill驱动内容生产
+- **整理日期**：2026-05-13
+- **关键洞察**：7条设计纪律是10年经验的规则化；AI只能做70分，剩下30分需要人工微调；跨工具视觉漂移是最大隐形成本；Skill=设计系统的AI可执行版本
+
+### 信息源治理：伯乐Skill与AI时代的信息饮食管理
+- **文档链接**：[https://www.feishu.cn/docx/MpA0dtgUNoU4Baxu7OLcIPi4nYe](https://www.feishu.cn/docx/MpA0dtgUNoU4Baxu7OLcIPi4nYe)
+- **一句话本质**：在AI让信息获取成本趋近于零的时代，真正稀缺的不是信息量，而是判断力——伯乐Skill的本质是一个"信息源的质检员"，它不帮你消费更多内容，而是帮你筛选值得消费的内容
+- **核心出处**：卡尔（AI沃茨）伯乐Skill（GitHub LearnPrompt/ai-news-radar）；150+信息源实践经验；赫拉利《智人之上》"信息饮食"理论；西蒙注意力经济学
+- **应用场景**：个人信息源评估与管理、AI日报自动化、信源分层架构（一手源/聚合源）、信息焦虑治理
+- **整理日期**：2026-05-13
+- **关键洞察**：伯乐三绝招（找最佳入口/分层管理/学养马技术）；7天观察期+65%差异度阈值；原始来源是信息的身份证；判断力比获取能力更稀缺
+
+### 周鸿祎「五虾模型」：AI辅助CEO决策的五角色Agent体系
+- **文档链接**：[https://www.feishu.cn/docx/SEWpdvUNzoKUHsxnZR6cAyZxncg](https://www.feishu.cn/docx/SEWpdvUNzoKUHsxnZR6cAyZxncg)
+- **一句话本质**：周鸿祎提出"AI的未来不是大模型，而是一群能干活的智能体"——五虾模型是CEO级落地框架：5个专业Agent（情报调研/需求洞察/组织诊断/科学决策/CEO助理）围绕CEO组成"虚拟高管团队"
+- **核心出处**：周鸿祎2026年5月直播/抖音（五角色全景图）+ 2026节点增长大会"一九五"框架 + ISC.AI 2025 L1-L5分级
+- **应用场景**：CEO决策支持、企业AI转型、OPC创业者个人能力增强、Redpoint项目架构参考
+- **整理日期**：2026-05-13
+- **关键洞察**：五虾模型=L4多Agent协作的CEO场景落地；哆啦dora正在自然演化为东东的CEO助理Agent；每个Agent有具体工具箱和交付物
+
+### 本周AI论文精选深度解读（2026.5.4-5.10）：10篇前沿论文分类研究
+- **文档链接**：[https://www.feishu.cn/docx/SZOfd3BYno6ApWxIxj0celoDnNf](https://www.feishu.cn/docx/SZOfd3BYno6ApWxIxj0celoDnNf)
+- **一句话本质**：本周论文的核心主题是"Agent系统工程化"——从协调架构、训练方法、评估基准到安全验证，AI正在从单点智能走向可工程化的多Agent协作系统
+- **核心出处**：DAIR.AI 本周AI论文精选；HeavySkill（arXiv:2605.02396）；Conductor/Sakana AI（ICLR 2026）；Coordination as Architecture（arXiv:2605.03310）；Self-Improving Pretraining/Meta FAIR；Horizon Generalization/Microsoft Research
+- **应用场景**：Agent系统架构设计、Agent训练方法选择、Agent评估基准理解、Agent安全治理
+- **整理日期**：2026-05-13
+- **关键洞察**：三大趋势（协调成为一等公民/长horizon是共同挑战/Agent系统正在工程化）；5个分类（架构/训练/评估/记忆/安全）
+
 ---
 
 ## 组织与管理
@@ -201,7 +257,19 @@
 
 ---
 
+## 健康与医疗
+
+### 血糖仪：核心原理与数值差异
+- **文档链接**：[https://www.feishu.cn/docx/DNXHdNyzgoiXO8xgze3cl84UnLc](https://www.feishu.cn/docx/DNXHdNyzgoiXO8xgze3cl84UnLc)
+- **一句话本质**：血糖仪是通过酶促反应将葡萄糖浓度转化为电信号的微型生化分析仪，不同设备数值差异源于酶种类、血样类型、红细胞压积和校准标准的系统性差异
+- **核心出处**：ISO 15197:2013国际标准；GOD/GDH/HK三种酶促反应原理；CGM三代传感器技术；持续葡萄糖监测临床专家共识2024
+- **应用场景**：血糖仪选购、数值差异解释、糖尿病日常监测、CGM选择决策
+- **整理日期**：2026-05-14
+- **关键洞察**：血糖仪测全血而生化仪测血浆，两者本就测的不是同一样本；CGM测组织间液有5-15分钟延迟；ISO允许±15%误差是临床可接受范围
+
+---
+
 ## 统计
 
-- **总研究主题数**：18（含1个重构版）
-- **最后更新**：2026-05-13
+- **总研究主题数**：25（含1个重构版）
+- **最后更新**：2026-05-14
