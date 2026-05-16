@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-05-08T13:04:01.567Z"
+    "lastTouchedAt": "2026-05-16T06:12:40.589Z"
   },
   "wizard": {
     "lastRunAt": "2026-02-05T16:16:05.545Z",
@@ -352,7 +352,9 @@
       "groupAllowFrom": [],
       "groupPolicy": "open",
       "requireMention": true,
-      "streaming": true
+      "streaming": true,
+      "webhookPath": "/feishu/webhook",
+      "webhookPort": 5000
     }
   },
   "gateway": {
