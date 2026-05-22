@@ -30,6 +30,14 @@
 
 ## AI与智能体
 
+### Anthropic的AI组织Loop：第一性原理深度解析
+- **文档链接**：[https://www.feishu.cn/docx/DntddixCuodwtkxIkCEcPvajnYf](https://www.feishu.cn/docx/DntddixCuodwtkxIkCEcPvajnYf)
+- **一句话本质**：Anthropic用"自举飞轮"让AI帮自己造AI，当编码被加速到接近免费，组织瓶颈从"怎么写"转向"怎么判断"——阿姆达尔定律在组织层面重新生效
+- **核心出处**：Dario Amodei（CEO）阿姆达尔组织定律发言；Boris Cherny（Claude Code创始人）/loop命令红杉演讲；Anthropic官方多智能体博客
+- **应用场景**：AI驱动组织架构设计、OPC一人公司模式、多Agent系统架构、判断力vs执行力平衡
+- **整理日期**：2026-05-20
+- **关键洞察**：自举飞轮（AI写的代码占自身80-90%）→ 阿姆达尔瓶颈转移 → /loop永动机模式 → 40人1300亿ARR的"短判断链"优势 → 判断力成为新稀缺资源
+
 ### Anthropic Managed Agents 架构
 - **文档链接**：[https://www.feishu.cn/docx/F7umdhQZcoD2DaxoSWUcnktqnAb](https://www.feishu.cn/docx/F7umdhQZcoD2DaxoSWUcnktqnAb)
 - **一句话本质**：Managed Agents是Anthropic把"从原型到生产"的Agent基础设施打包成云服务——你只定义Agent的脑子（提示词+工具），沙箱、状态、凭证、错误恢复全部托管
@@ -300,7 +308,61 @@
 
 ---
 
+### 深圳科创学院
+- **文档链接**：[https://www.feishu.cn/docx/HpQLdwfCnozWR4xompccnk5JnVb](https://www.feishu.cn/docx/HpQLdwfCnozWR4xompccnk5JnVb)
+- **一句话本质**：李泽湘把30年孵化大疆、云鲸的经验打包成一个"硬科技创业军校"——从训练营筛选到入孵孵化到资金支持，一站式把理工科学生变成公司创始人
+- **核心出处**：深圳科创学院官网百科；福布斯2025报道；于盈（副院长）T-EDGE发言；李泽湘广东新春第一会发言
+- **应用场景**：硬科技创业资源对接、创业教育模式设计、深圳vs硅谷硬件创业对比、孵化器模式参考
+- **整理日期**：2026-05-20
+- **关键洞察**："教育+孵化+生态"三位一体；训练营是筛选入口不是培训产品；50万-500万分阶段资金支持；硅谷硬件成本是深圳的5-30倍但迭代速度慢5-10倍；被称为"中国版YC"但覆盖从0到1
+
+---
+
+## 商业与产品（续）
+
+### HTML的不讲道理好用：AI时代人机协作界面革命
+- **文档链接**：[https://www.feishu.cn/docx/VsTVd5gYXo7sxqxSqmQceH9Bnwg](https://www.feishu.cn/docx/VsTVd5gYXo7sxqxSqmQceH9Bnwg)
+- **一句话本质**：Anthropic工程师Thariq Shihipar发表引爆全网的文章——当AI能写上万字计划时，人类已经"老实说不读了"，解决方案是把Markdown换成HTML，让文档变成可浏览、可点击、可操作的界面，重新把人拉回决策回路
+- **核心出处**：Thariq Shihipar X文章《The Unreasonable Effectiveness of HTML》；How I AI播客访谈；Simon Willison响应；Karpathy站台
+- **应用场景**：AI写计划/方案时的输出格式选择、人机协作效率提升、设计系统活文档化、团队AI工作流设计
+- **整理日期**：2026-05-19
+- **关键洞察**：Compute Allocator（人是计算资源分配者）；HTML让spec从"顺序阅读"变成"空间浏览"；提示词要简洁留空间；PRD+tech spec可合成一页HTML；不满意某段就造个临时UI；设计系统也做成HTML活文档
+
+### YC总裁Garry Tan的AI个人复利系统（1000倍杠杆差距）
+- **文档链接**：[https://www.feishu.cn/docx/IFDLdGHzpoMQTyxznzLcyTmvnVd](https://www.feishu.cn/docx/IFDLdGHzpoMQTyxznzLcyTmvnVd)
+- **一句话本质**：YC总裁Garry Tan的AI系统两个月涨10倍的秘密不是提示词技巧，而是让AI有记忆、有流程、有检查——每次用完都在滚雪球，而大多数人的AI每次从零开始
+- **核心出处**：Garry Tan公开分享；GBrain GitHub (github.com/garrytan/gbrain)；gstack Claude Code配置
+- **应用场景**：个人AI知识系统搭建、AI复利体系建设、OpenClaw+GBrain集成、工作流固化
+- **整理日期**：2026-05-19
+- **关键洞察**：三层复利结构（记忆+流程+检查）；读取→对话→写入闭环；Meta-Meta-Prompting（建立让AI自己优化的系统）；GBrain=可被Agent直接读写的长期记忆系统；5个月处理20+本书、10万页知识
+
+### Ruflo：让Agent自组织成团队协同工作的多智能体编排平台
+- **文档链接**：[https://www.feishu.cn/docx/SRC0do50EoE75BxkHtOcPBO0nIe](https://www.feishu.cn/docx/SRC0do50EoE75BxkHtOcPBO0nIe)
+- **一句话本质**：Ruflo是面向Claude Code的多智能体编排平台，让你像带团队一样指挥一群AI Agent——60+专业Agent分工协作、自学习进化、跨设备联邦协作，GitHub已超48,500 Stars
+- **核心出处**：GitHub ruvnet/ruflo；头条深度解读；阿里云开发者社区分析
+- **应用场景**：企业级软件开发多Agent协作、复杂任务并行处理、技术团队AI提效
+- **整理日期**：2026-05-19
+- **关键洞察**：Queen-Worker层级调度；SONA自学习架构（越用越聪明）；向量记忆系统（HNSW索引150x-12500x加速）；Token成本比单Agent降低75%；与OpenClaw定位不同（Ruflo=企业编排，OpenClaw=个人助手）
+
+### SEO Agent Skill实践：从SOP到技能封装
+- **文档链接**：[https://www.feishu.cn/docx/Tqdxdr064ovEWcx0IbactfaEnl3](https://www.feishu.cn/docx/Tqdxdr064ovEWcx0IbactfaEnl3)
+- **一句话本质**：子木（AI出海从业者）分享了用Agent Skill自动化SEO工作流的实践经验——把重复的SEO流程（关键词挖掘、网站审计、内容创作）打包成可复用、可进化的技能包，每次执行成本仅几毛钱
+- **核心出处**：子木公众号《SEO Agent Skill的一些实践思考》；GitHub seo-audit-skill；子木实操案例
+- **应用场景**：SEO团队提效、出海创业网站优化、Agent Skill制作方法论、技能封装设计原则
+- **整理日期**：2026-05-19
+- **关键洞察**：两步走（拆解SOP → 识别可Skill化的流程）；细分比通用好（Listicle/Comparison/How-to分别做Skill）；好的Skill = 经验蒸馏 + 自我学习（反馈机制是关键）
+
+### 马斯克以色列Samson峰会演讲深度剖析
+- **文档链接**：[https://www.feishu.cn/docx/EvGndegwTobDzPxw5JfcUvbdnHc](https://www.feishu.cn/docx/EvGndegwTobDzPxw5JfcUvbdnHc)
+- **一句话本质**：2026年5月18日凌晨，马斯克视频连线以色列第9届Samson智能出行峰会，用10分钟抛出五大"科技核弹"——自动驾驶十年终局（人类开车成小众爱好）、AI+机器人重塑文明、以色列人均创新第一、SpaceX即将IPO（估值2万亿）、Neuralink今年让盲人复明
+- **核心出处**：马斯克原话（Samson峰会访谈）；彭博社SpaceX估值数据；多家媒体交叉验证（IT之家/财联社/虎嗅）
+- **应用场景**：自动驾驶行业趋势判断、SpaceX IPO投资参考、脑机接口技术路线理解、科技预言可信度评估
+- **整理日期**：2026-05-19
+- **关键洞察**：马斯克有"激进承诺+延迟兑现"的历史（2014-2019年FSD预言均未按时实现）；但本次有实际运营数据支撑（德州3城无安全员Robotaxi）；"治病→增强→共生"是Neuralink的清晰技术路线
+
+---
+
 ## 统计
 
-- **总研究主题数**：28（含1个重构版）
-- **最后更新**：2026-05-18
+- **总研究主题数**：35（含1个重构版）
+- **最后更新**：2026-05-20
