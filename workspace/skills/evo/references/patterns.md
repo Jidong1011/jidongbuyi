@@ -850,5 +850,154 @@ scientific_discovery:
 
 ---
 
-*本模式库持续更新中。最后更新时间：2026-06-11*
+---
+
+## 🆕 2026年6月新增模式（Evo Skill自循环进化扫描结果）
+
+> 以下模式基于2026年6月最新研究扫描（arXiv 2026-02至2026-06）
+
+---
+
+### 模式16: 能力保持型进化 (Capability-Preserving Evolution, CPE)
+
+**核心思想**: 在自我进化过程中防止"遗忘"——新能力提升不以牺牲已有能力为代价
+
+**研究来源**: "Do Self-Evolving Agents Forget?" (2026-05)
+
+**实现要点**:
+- 建立能力基线测试套件（Capability Baseline Suite）
+- 每次进化前运行回归测试（Regression Testing）
+- 多目标优化：提升目标能力 + 保持已有能力
+- 帕累托前沿求解（Pareto Frontier Optimization）
+
+**关键指标**:
+```
+能力保持率 = 进化后旧任务通过率 / 进化前旧任务通过率
+净能力增益 = Σ(新任务提升) - Σ(旧任务退化)
+```
+
+**适用场景**: 长期运行的生产级Agent、关键业务系统
+
+---
+
+### 模式17: Harness优化进化 (Harness-Optimizing Evolution)
+
+**核心思想**: 固定LLM参数，通过优化运行框架（Harness）实现能力提升
+
+**研究来源**: Self-Harness (上海AI Lab, 2026-06, arXiv:2606.09498)
+
+**三阶段循环**:
+1. **Weakness Mining（弱点挖掘）**: 从执行轨迹分析失败模式
+2. **Harness Proposal（框架提案）**: 生成针对性的Harness改进方案
+3. **Proposal Validation（提案验证）**: 回归测试确保无退化
+
+**四类改进类型**:
+- 系统提示词修改（System Prompt Modification）
+- 工具包装器添加（Tool Wrapper Enhancement）
+- 验证步骤注入（Verification Step Injection）
+- 规划模板更新（Planning Template Update）
+
+**关键发现**: 
+- Harness-Updating（生成更新）vs Harness-Benefit（从更新受益）能力分离
+- 弱模型也能生成高质量更新，中等能力模型受益最大（倒U型曲线）
+
+**适用场景**: 无法/不愿微调模型的场景、多模型统一优化
+
+---
+
+### 模式18: 回顾性工具包优化 (Retrospective Harness Optimization, RHO)
+
+**核心思想**: 无需外部标准答案，通过自我反思改进工具包
+
+**研究来源**: 港城大×微软 (2026-06, arXiv:2606.05922)
+
+**三步进化**:
+1. **诊断（Diagnosis）**: 用DPP筛选核心学习案例（难度70% + 多样性30%）
+2. **重试（Retry）**: 自我验证 + 自我一致性检查
+3. **改造（Refinement）**: 生成三套方案，内部评分选出最优
+
+**效果数据**:
+- SWE-BenchPro: 59% → 78% (+19%)
+- 优于依赖标准答案的meta-Harness方法（62%）
+
+**适用场景**: 无标准测试集的真实部署环境
+
+---
+
+### 模式19: 可执行子Agent积累 (Executable Subagent Accumulation)
+
+**核心思想**: 将成功经验保存为可执行代码（而非文本描述），形成可复用的子Agent库
+
+**研究来源**: AgentFactory (北大, 2026-03, arXiv:2603.18000)
+
+**三阶段生命周期**:
+1. **Install**: 从零构建子Agent解决初始问题
+2. **Self-Evolve**: 检测子Agent局限并自主改进
+3. **Deploy**: 导出成熟子Agent为独立Python模块
+
+**核心优势**:
+- 子Agent是纯Python代码，可跨平台移植
+- 持续基于执行反馈优化
+- 解决"文本经验无法保证可靠重执行"问题
+
+**适用场景**: 复杂工作流自动化、企业级Agent系统
+
+---
+
+### 模式20: 步骤级技能适应 (Step-Level Skill Adaptation)
+
+**核心思想**: 细粒度失败归因，精准更新技能
+
+**研究来源**: SkillAdaptor (阿里, 2026-06, arXiv:2606.01311)
+
+**实现流程**:
+1. 识别第一个可操作的故障步骤
+2. 将责任关联到候选技能
+3. 在显式接受检查下应用针对性更新
+
+**效果数据**:
+- PinchBench: +1.5 points
+- Claw-Eval: +1.8 points  
+- WebShop: +1.7 points (成功率)
+
+**特点**: 训练无关（Training-free），可即插即用到OpenClaw类Harness
+
+**适用场景**: 交互式任务、长周期任务
+
+---
+
+### 模式21: 人机协同进化 (Human-in-the-Loop Co-evolution)
+
+**核心思想**: 人类设定方向，Agent执行进化，关键节点人工审核
+
+**实践来源**: AutoClaw自进化机制 (智谱, 2026-04)
+
+**工作流程**:
+1. Agent自动扫描对话/执行过程
+2. 识别纠正指令、新方法、用户偏好
+3. 以"进化请求"形式弹出，经用户批准后写入长期记忆
+
+**关键原则**:
+- 战略方向人类定（Should we pivot?）
+- 质量标准人类设（What counts as good?）
+- 伦理边界人类划（What's allowed?）
+- 进化执行Agent做（How to improve?）
+
+**适用场景**: 需要平衡自主性与可控性的场景
+
+---
+
+## 更新后的模式总结矩阵
+
+| 模式 | 进化单元 | 反馈来源 | 自主性 | 风险等级 | 成熟度 |
+|------|----------|----------|--------|----------|--------|
+| 1-6 | Prompt/Memory | 任务结果 | 低 | 低 | 高 |
+| 7-9 | Skill/Tool | 性能指标 | 中 | 中 | 中 |
+| 10-12 | Architecture | 多Agent反馈 | 中 | 中 | 中 |
+| 13-15 | Source Code | 测试验证 | 高 | 高 | 低 |
+| **16-21** | **Capability/Harness/Subagent** | **多维度** | **中高** | **中** | **新兴** |
+
+---
+
+*本模式库持续更新中。最后更新时间：2026-06-18（本次由Evo Skill自循环进化任务更新）*
 *如发现新的进化模式，欢迎通过PR补充。*
