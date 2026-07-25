@@ -1241,5 +1241,260 @@ apex_evolution:
 
 ---
 
-*本模式库持续更新中。最后更新时间：2026-06-18（本次由Evo Skill自循环进化任务更新）*
+---
+
+### 模式26: 共进化评估器模式 (Co-Evolving Evaluator Pattern)
+
+**核心思想**: 打破静态评估假设，让Agent与其评估器协同进化，适应非平稳环境
+
+**研究来源**: Red Queen Gödel Machine (2026-06-24, arXiv:2606.26294)
+
+**问题背景**: 传统自改进Agent假设评估标准静止不变，但真实环境是动态的。当Agent改进后，原有评估标准可能不再适用。
+
+**核心机制**:
+```
+┌─────────────────────────────────────────────────────────┐
+│              共进化评估器系统 (RQGM风格)                  │
+├─────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────┐   │
+│  │              Epoch 1 (固定评估器)                 │   │
+│  │  Task Agent → 被 Evaluator 1 评估 → 改进        │   │
+│  └─────────────────────────────────────────────────┘   │
+│                          ↓ 评估器进化边界                │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │              Epoch 2 (新评估器)                   │   │
+│  │  Task Agent → 被 Evaluator 2 评估 → 改进        │   │
+│  │  (Evaluator 2 在 Epoch 1 数据上训练)              │   │
+│  └─────────────────────────────────────────────────┘   │
+│                          ↓                             │
+│  │  受控效用进化 (Controlled Utility Evolution)      │   │
+│  │  • 每个Epoch内评估器固定                           │   │
+│  │  • Epoch边界可更新评估器                           │   │
+│  │  • 新评估器必须统计优于旧评估器才能替换             │   │
+└─────────────────────────────────────────────────────────┘
+```
+
+**三个关键创新**:
+1. **受控效用进化**: 搜索分为多个Epoch，每个Epoch内评估器固定，边界处可更新
+2. **选择性擦除**: 替换评估器时只丢弃依赖旧评估器的记录，保留其他证据
+3. **对抗正则化**: 可引入对抗目标（如对AI和人类作品同等严格）
+
+**效果数据**:
+- Polyglot代码任务: 71.7% vs 69.9% (SOTA)，节省1.35x-1.72x Token
+- 论文写作: 接受率从21.8% → 40.5% (+1.86x)
+- 证明评分: 准确率提升9%，搜索成本降低3x
+
+**适用场景**:
+- 无直接基准的任务（论文写作、证明评分）
+- 评估缓慢或弱信息的任务
+- 防止奖励黑客和基准饱和
+
+**安全考量**:
+- 评估器必须与任务Agent共同进化，而非独立漂移
+- 需要ground truth数据集验证新评估器
+- 收敛保证弱于静态评估，需要谨慎监控
+
+---
+
+### 模式27: 协议驱动自进化模式 (Protocol-Driven Self-Evolution)
+
+**核心思想**: 通过标准化协议解耦"进化什么"与"如何进化"，实现可组合、可审计、可回滚的自进化
+
+**研究来源**: Autogenesis Protocol (2026-05-07, arXiv:2604.15034)
+
+**两层协议架构**:
+```
+┌─────────────────────────────────────────────────────────┐
+│              协议驱动自进化系统 (AGP风格)                 │
+├─────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────┐   │
+│  │  Layer 1: RSPL (Resource Substrate Protocol)     │   │
+│  │  资源基板协议层 - 定义进化的"什么"                 │   │
+│  │  • Prompt (提示词)                               │   │
+│  │  • Agent (智能体)                                │   │
+│  │  • Tool/MCP/Skill (工具)                         │   │
+│  │  • Environment (环境)                            │   │
+│  │  • Memory (记忆)                                 │   │
+│  └─────────────────────────────────────────────────┘   │
+│                          ↓                             │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │  Layer 2: SEPL (Self-Evolution Protocol)         │   │
+│  │  自进化协议层 - 定义进化的"如何"                   │   │
+│  │  • Reflect (反思)                                │   │
+│  │  • Propose (提案)                                │   │
+│  │  • Verify (验证)                                 │   │
+│  │  • Commit (提交)                                 │   │
+│  │  • Rollback (回滚)                               │   │
+│  └─────────────────────────────────────────────────┘   │
+```
+
+**RSPL关键特性**:
+- **显式状态**: 每个资源有明确的状态定义
+- **生命周期管理**: 创建→激活→更新→退役的完整生命周期
+- **版本化接口**: 所有变更可追溯、可回滚
+
+**SEPL原子操作**:
+1. **Reflect**: 分析执行轨迹，识别改进机会
+2. **Propose**: 生成候选改进方案
+3. **Verify**: 沙箱验证候选方案
+4. **Commit**: 提交通过验证的变更
+5. **Rollback**: 失败时回滚到稳定版本
+
+**工业实现**: Autogenesis System (AGS)
+- 在GPQA/AIME/GAIA/HLE/LeetCode上持续超越强基线
+- 支持动态实例化、检索、优化协议资源
+
+**配置示例**:
+```yaml
+autogenesis:
+  rspl:
+    resources:
+      - type: prompt
+        versioning: semantic
+        rollback_limit: 10
+      - type: tool
+        lifecycle: [draft, verified, deprecated]
+        signature_required: true
+      - type: memory
+        retention_policy: "90d_or_1000entries"
+  sepl:
+    operators:
+      reflect:
+        trigger: [on_failure, on_completion, periodic]
+        evidence_sources: [trajectory, feedback, benchmark]
+      propose:
+        mutation_types: [incremental, structural, compositional]
+        max_proposals_per_cycle: 3
+      verify:
+        sandbox: isolated_container
+        test_coverage: 0.8
+        regression_suite: mandatory
+      commit:
+        require_approval: [meta_level_changes]
+        auto_promote: [incremental_changes]
+      rollback:
+        trigger: [health_check_fail, user_override, performance_degradation]
+```
+
+**适用场景**:
+- 需要严格治理的企业环境
+- 多团队协作的Agent系统
+- 安全关键型应用
+- 需要合规审计的场景
+
+**与其他模式的关系**:
+- 可审计技能图 (模式12): 协议驱动提供实现基础
+- Harness工程自进化 (模式9): RSPL涵盖Harness组件
+- 元认知自我修改 (模式11): SEPL提供安全的元级修改框架
+
+---
+
+### 模式28: 螺旋升层自进化 (Spiral Meta-Upgrade)
+
+**核心思想**: 通过螺旋递归升层避免平面循环震荡，实现真正的元认知超越
+
+**研究来源**: 螺旋数学理论 (张智明, 2024-2025) + DGM/HyperAgents实践 (2026)
+
+**核心概念**:
+- **平面迭代** (Iteration): Sₙ = F(Sₙ₋₁) —— 在同一维度循环
+- **螺旋超越** (Transcendence): Sₙ = Φ(Sₙ₋₁, d) —— 引入新维度d
+
+**螺旋升层算子 Φ**:
+```
+Level 0: 对象层 - 修改任务策略
+Level 1: 元层 - 修改"如何修改策略"（反思方法）
+Level 2: 元-元层 - 修改"如何反思"（认知框架）
+Level N: 每升一层，改变"看问题的方式"
+```
+
+**实现框架**:
+```python
+def spiral_self_improving_agent(task, init_policy, max_level=3):
+    policy = init_policy
+    archive = []
+    
+    for level in range(max_level):
+        best = policy
+        for cycle in range(cycles_per_level):
+            result = execute(policy, task)
+            score = evaluate(result, task)
+            
+            # 同层迭代：分析失败，修改策略
+            if score < target:
+                candidate = mutate_policy(policy, diagnose(result))
+                if evaluate(execute(candidate, task), task) > score:
+                    best = candidate
+        
+        archive.append(best)
+        
+        # ★ 螺旋超越：扩展工具集、加深critique、改写meta-rule
+        policy = elevate_meta(
+            best,
+            level=level,
+            extra_tools=expand_toolset(level),
+            metacritique_depth=level + 1
+        )
+        
+        # 沙箱验证
+        assert sandbox_verify(policy), "Self-modification failed safety gate"
+    
+    return archive[-1]
+```
+
+**Prompt设计**:
+```
+你是一个具有螺旋元认知的Coding Agent。
+Round 1：直接解题。
+Round 2：批判Round 1的推理链，指出隐含假设。
+Round 3：批判你做Round 2批判的方式本身（二阶反思）。
+若无新视角产生，停止升层输出当前最佳答案。
+```
+
+**工程Checklist**:
+- [ ] 分离对象层/元层/元-元层代码
+- [ ] 元层代码可编辑（DGM思路）
+- [ ] 给每轮输出打螺旋层级标签（用于RLHF/DPO标注）
+- [ ] 沙箱+差分测试必做
+
+**适用场景**:
+- 复杂推理任务
+- 需要突破性创新的场景
+- 追求AGI的研究项目
+
+**注意事项**:
+- 高计算成本（每层嵌套循环）
+- 需要强大的基础模型支撑
+- 可能产生难以预测的元级变更
+
+---
+
+## 2026年7月扫描总结
+
+### 本次更新新增模式
+
+| 模式 | 名称 | 来源 | 核心创新 |
+|------|------|------|----------|
+| 26 | 共进化评估器 | RQGM (2026-06-24) | 非平稳评估下的递归改进 |
+| 27 | 协议驱动自进化 | AGP (2026-05-07) | 标准化协议实现安全自进化 |
+| 28 | 螺旋升层自进化 | 螺旋数学+DGM (2026) | 避免平面循环的元认知超越 |
+
+### 重要趋势确认
+
+1. **Harness工程成为共识**: 翁荔博客 (2026-07-04) 确认Harness是自改进的首要目标
+2. **Loop Engineering范式确立**: 2026年6月成为AI工程第四代范式
+3. **小模型进化可行**: Polaris证明7B模型也能有效自进化
+4. **工业实践加速**: Raven Agent (盛大)、EverMind等发布L3级自进化产品
+
+### 下次扫描建议
+
+- **时间**: 2026-08-01
+- **重点关注**: 
+  - EvoAgentBench上的新方法
+  - 自进化安全/对齐研究
+  - 具身智能体自进化
+  - 工业落地案例
+
+---
+
+*本模式库持续更新中。最后更新时间：2026-07-09（本次由Evo Skill自循环进化任务更新）*
 *如发现新的进化模式，欢迎通过PR补充。*
